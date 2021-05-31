@@ -1,0 +1,38 @@
+---
+
+version: "3"
+
+services:
+  db:
+    image: postgres:13.2-alpine
+    environment:
+      POSTGRES_PASSWORD: password
+    volumes:
+      - pgdata:/var/lib/postgresql/data
+
+  web-server1:
+    image: redmine:4.2.0-alpine
+    restart: always
+    env_file: .env.development
+    depends_on:
+      - db
+
+  web-server2:
+    image: redmine:4.2.0-alpine
+    restart: always
+    env_file: .env.development
+    depends_on:
+      - db
+
+  balancer:
+    image: nginx:1.19.10-alpine
+    volumes:
+      - ./nginx.conf:/etc/nginx/templates/default.conf.template
+    ports:
+      - "8080:8080"
+    depends_on:
+      - web-server1
+      - web-server2
+
+volumes:
+  pgdata:
