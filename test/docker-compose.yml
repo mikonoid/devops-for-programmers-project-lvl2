@@ -20,7 +20,7 @@ services:
   web-server2:
     image: redmine:4.2.0-alpine
     restart: always
-    env_file: .env.development
+    env_file: ./.env.development
     depends_on:
       - db
 

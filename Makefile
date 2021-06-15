@@ -1,8 +1,11 @@
 compose:
-	docker-compose up
+	cd test && docker-compose up
 
 compose-down:
-	docker-compose down -v --remove-orphans
+	cd test && docker-compose down -v --remove-orphans
+
+install-requirements:
+	ansible-galaxy install -r requirements.yml
 
 deploy:
-	ansible-playbook -v --vault-password-file vault-password playbook.yml
+	ansible-playbook -i hosts -v --vault-password-file vault-password playbook.yml
