@@ -14,3 +14,10 @@
 
 ```ansible-playbook  playbook.yml -u root```
 
+### Balancer 
+
+![image](https://user-images.githubusercontent.com/14234200/122093838-24fa8e00-ce14-11eb-884d-4dc2ed0b13d4.png)
+
+### Address
+
+http://139.59.205.132/
