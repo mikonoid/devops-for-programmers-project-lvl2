@@ -10,14 +10,6 @@
     - geerlingguy.pip
 
   tasks:
-    # - name: install packages
-    #   apt:
-    #     name: python3-pip
-    #     update_cache: yes
-
-    # - name: install docker SDK
-    #   pip_install_packages:
-    #     name: docker
 
     - name: create environment variables from template
       template:
