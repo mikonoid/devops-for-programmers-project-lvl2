@@ -5,15 +5,19 @@
   vars:
     pip_install_packages:
       - name: docker
+      
+  pre_tasks:
+      - name: Update and upgrade apt packages
+        become: true
+        apt:
+            upgrade: yes
+            update_cache: yes
+            cache_valid_time: 86400 #One day
   
   roles:
     - geerlingguy.pip
   
   tasks:
-    - name: update apt
-      apt: 
-        update_cache: true
-        cache_valid_time: 3600
 
     - name: create environment variables from template
       template:
@@ -21,7 +25,7 @@
         dest: '.env'
 
     - name: run container
-      community.docker.docker_container:
+      docker_container:
         name: redmine-app
         image: redmine
         published_ports: 80:3000
