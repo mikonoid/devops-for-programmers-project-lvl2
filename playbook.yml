@@ -5,6 +5,12 @@
   vars:
     pip_install_packages:
       - name: docker
+  
+  tasks:
+    - name: update apt
+      apt: 
+        update_cache: true
+        cache_valid_time: 3600
 
   roles:
     - geerlingguy.pip
