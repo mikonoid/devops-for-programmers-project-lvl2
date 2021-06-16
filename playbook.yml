@@ -3,7 +3,6 @@
   hosts: all
   gather_facts: yes
   remote_user: root
-  
   vars:
     pip_install_packages:
       - name: docker
