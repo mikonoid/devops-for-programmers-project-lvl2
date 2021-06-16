@@ -16,7 +16,7 @@
 
   roles:
     - geerlingguy.pip
-  
+
   tasks:
 
     - name: create environment variables from template
