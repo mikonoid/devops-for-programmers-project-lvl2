@@ -4,7 +4,7 @@ compose:
 compose-down:
 	cd test && docker-compose down -v --remove-orphans
 
-install-requirements:
+setup:
 	ansible-galaxy install -r requirements.yml
 
 deploy:
