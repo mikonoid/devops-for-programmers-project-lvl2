@@ -8,4 +8,4 @@ setup:
 	ansible-galaxy install -r requirements.yml
 
 deploy:
-	ansible-playbook -i inventory/all -v --vault-password-file vault-password playbook.yml
+	ansible-playbook -i hosts -v --vault-password-file vault-password playbook.yml
