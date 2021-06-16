@@ -1,6 +1,6 @@
 - import_playbook: datadog.yml
 - name: Deploy app
-- hosts: all
+  hosts: all
   gather_facts: yes
   remote_user: root
 
