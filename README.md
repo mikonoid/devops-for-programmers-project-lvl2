@@ -8,11 +8,11 @@
 
 ### How to install requirements
 
-```ansible-galaxy install -r requirements.yml```
+```make setup```
 
 ### How to deploy on servers
 
-```ansible-playbook  playbook.yml -u root```
+```make deploy```
 
 ### Balancer 
 
