@@ -5,7 +5,7 @@
   vars:
     pip_install_packages:
       - name: docker
-      
+
   pre_tasks:
       - name: Update and upgrade apt packages
         become: true
@@ -13,7 +13,7 @@
             upgrade: yes
             update_cache: yes
             cache_valid_time: 86400 #One day
-  
+
   roles:
     - geerlingguy.pip
   
