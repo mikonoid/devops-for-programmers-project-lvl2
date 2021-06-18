@@ -16,7 +16,7 @@
 
   roles:
     - geerlingguy.pip
-    - datadog.datadog 
+    - datadog.datadog
 
   tasks:
 
